@@ -1,0 +1,188 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    margin: 100px 600px auto;
+    background: #343333;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+
+}
+
+/*h1 {
+    position: relative;
+   
+    font-family: sans-serif;
+    -webkit-text-stroke: 0.3vw;
+    text-transform: uppercase;
+}
+
+h1::before {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    color: #383d52;
+    -webkit-text-stroke: 0.1vw #7fffd4 ;
+    border-right: 2px solid #7fffd4;
+    overflow: hidden;
+    animation: animate 20s linear infinite;
+}
+
+@keyframes animate{
+    0%{
+        width: 0;
+    }
+    70%{
+        width: 100%;
+    }
+} */
+
+.principal {
+    color: #7fffd4;
+    position: relative;
+    padding: 20px;
+    margin: 30px;
+    width: fit-content;
+    background: #0f1923;
+    overflow: unset;
+    border-radius: 6px;
+}
+
+.principal img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -50px;
+
+}
+
+.principal h1 {
+    margin: 20px;
+}
+
+.principal h2 {
+    text-align: center;
+    margin: 20px;
+}
+
+.cifra {
+    text-align: center;
+    line-height: 30px;
+}
+
+.radioCod {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 12px 0;
+}
+
+fieldset {
+    border: none;
+}
+
+#botaoResultado {
+    background: #0f1923;
+    color: aquamarine;
+    margin: 2% 0;
+    width: 50%;
+    height: 40px;
+    border: 1px solid #f1f0f0;
+    box-shadow: 2px 3px 5px #47daff;
+    border-radius: 10px;
+    font-family: "Poppins", sans-serif;
+    font-size: 17px;
+    text-transform: uppercase;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.divChave {
+    display: none;
+}
+
+.divChave input {
+    color: aquamarine;
+    background: #0f1923;
+    width: 50%;
+    margin: 10px 0;
+    padding: 12px;
+    border: 1px solid #cfcfcf;
+    border-radius: 10px;
+    font-family: "Poppins", sans-serif;
+    font-size: 15px;
+    text-align: center;
+    box-shadow: 2px 3px 5px #47daff;
+}
+
+@keyframes rotate {
+    100% {
+        transform: rotate(-1turn);
+    }
+}
+
+.principal::before,
+.principal::after {
+    content: '';
+    position: absolute;
+    left: -2px;
+    top: -2px;
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    background: #333;
+    border-radius: 8px;
+    background-image: linear-gradient(45deg, #7fffd4, #00CE75, #c73fd3, #00ff90, #0f8e57, #4e77cf, #35c548, #00CE75, #c4ff56, #00ff90, #7fffd4, #d14165);
+    background-size: 500%;
+    animation: position_borda 12s linear infinite alternate;
+    z-index: -1;
+}
+
+.principal::after {
+    filter: blur(20px);
+}
+
+@keyframes position_borda {
+    0% {
+        background-position: 0 0;
+    }
+
+    50% {
+        background-position: 400% 0;
+    }
+
+    100% {
+        background-position: 0 0;
+    }
+}
+
+@media (max-width: 700px) {
+    .container {
+        width: auto;
+    }
+
+    h1 {
+        font-size: 25px;
+        text-align: center;
+    }
+
+    .radioCod {
+        display: block;
+    }
+
+    #botaoResultado {
+        font-size: 15px;
+        height: 45px;
+    }
+}
+
+footer {
+    text-align: center;
+    margin: 2.3%;
+}

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trabalho de Criptografia</title>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600&display=swap" />
+
+    <link rel="stylesheet" href="CSS/style.css">
+
+</head>
+
+<body>
+    <div class="principal">
+
+        <header>
+            <h1 data-text="Cifra de Cesar e B-64  ">Cifra de Cesar e B-64</h1>
+        </header>
+
+        <!--fim cabecalho-->
+
+        <div class="foto">
+            <img src="imagem/Avatar-removebg-preview.png">
+        </div>
+
+        <!--fim da imagem-->
+
+        <main>
+            <h2>Como você ira cifra ?</h2>
+
+            <form>
+                <div class="cifra">
+
+                    <select name="codigo" id="codigo">
+                        <option value="" disabled selected>Selecione o tipo de código</option>
+                        <option value="cesar">Cifra de César</option>
+                        <option value="base64">Base 64</option>
+                    </select> <br>
+
+                    <label for="mensagem">Insira a mensagem:</label> <br>
+                    <textarea id="mensagem" cols="10" rows="4"></textarea> <br>
+
+                    <fieldset class="divChave">
+                        <label for="chave">Insira um incremento de 1 a 25:</label> <br>
+                        <input type="number" id="chave" value="1" max="26" />
+                    </fieldset> <br>
+
+                    <fieldset class="radioCod">
+                        <div class="divRadio">
+                            <input type="radio" name="cod" class="radio" id="cod" />
+                            <label for="codificar">Codificar</label>
+                        </div>
+
+                        <div class="divRadio">
+                            <input type="radio" name="cod" class="radio" id="decod" />
+                            <label for="decodificar">Decodificar</label>
+                        </div>
+                    </fieldset>
+
+                    <fieldset>
+                        <label for="resultado">Resultado:</label> <br>
+                        <textarea name="resultado" id="resultado" cols="10" rows="4" readonly></textarea>
+                    </fieldset>
+
+                    <button id="botaoResultado">
+                        <p>
+                            Cifrar ou Descodificar
+                        </p>
+                    </button>
+
+                </div>
+            </form>
+
+        </main>
+        <footer class="fim">Trabalho individual Cifra de Cesar e Base 64</footer>
+    </div>
+
+
+    <script src="JAVASCRIPT/main.js"></script>
+</body>
+
+</html>

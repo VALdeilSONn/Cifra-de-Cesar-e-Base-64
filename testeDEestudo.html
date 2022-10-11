@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Caesar Cipher</title>
+        <meta charset="UTF-8">
+        <style>
+            button {
+                width: 50px;
+                height: 50px;
+                border-radius: 25px;
+                background-color: orange;
+                border-color: lightsalmon;
+            }
+            #big {
+                width: 100px;
+            }
+        </style>
+    </head>
+    <body>
+        <span id="label">Key: </span>
+
+        <button onclick="prev()">-</button>
+
+        <span id="key">1</span>
+
+        <button onclick="next()">+</button><br/><br/>
+
+        <input type="text" id="input"/>
+
+        <button onclick="calculate()" id="big">Calculate</button>
+        
+        <span id="output"></span>
+        <script>
+            var values = new Array("a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z");
+            var key = +document.getElementById("key").innerHTML;
+
+            function prev() {
+                if(key > 1) {
+                    key--;
+                    document.getElementById("key").innerHTML = key;
+                }
+            }
+
+            function next() {
+                if(key < 25) {
+                    key++;
+                    document.getElementById("key").innerHTML = key;
+                }
+            }
+
+            function calculate() {
+                var input = document.getElementById("input").value.toUpperCase();
+                var result = "";
+
+                for(var i = 0; i<input.length; i++){ //Passa por cada caracter do input
+
+                    var posicaoDaLetraNoAlfabeto = input.charCodeAt(i)-64; //Identifica qual letra é do alfabeto
+                    var letraComDeslocamento = (posicaoDaLetraNoAlfabeto + key) % 26; //Faz o deslocamento de César e mantém dentro do alfabeto (26 letras)
+                    letraComDeslocamento = letraComDeslocamento == 0 ? 26 : letraComDeslocamento; //MOD retornar 0 caso o resultado seja 26, tem que tratar isso
+                    result += values[letraComDeslocamento-1]; //Faz -1 porque a letra 1 (A) está no índice 0 do teu array.
+                }
+
+                document.getElementById("output").innerHTML = result;
+            }
+        </script>
+    </body>
+</html>
